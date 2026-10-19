@@ -184,3 +184,7 @@ a { color: var(--ink); text-decoration: none; }
 .stage .caption { position: absolute; z-index: 3; left: 50%; bottom: 34px; transform: translateX(-50%); max-width: min(92%, 720px); padding: 9px 16px; border-radius: var(--radius-pill); background: rgba(10,10,10,.78); border: 1px solid var(--line-2); backdrop-filter: blur(8px); color: var(--ink); font: 500 13px/1.3 var(--font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
 .stage .caption b { color: var(--accent); font-weight: 600; }
 @media (max-width: 760px) { .stage .caption { bottom: 28px; font-size: 12px; padding: 7px 12px; } .win-bar .r { gap: 5px; } .win-bar .t { display: none; } }
+
+.pill.ico { padding: 0 11px; } .pill.ico img { width: 14px; height: 14px; filter: invert(1); }
+.foot a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) { .nav .right .pill:not(.metal):not(.ico) { display: none; } }

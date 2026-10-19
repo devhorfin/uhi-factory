@@ -154,7 +154,7 @@ docs/      media, dev notes, the live-sim brainstorm
 
 Slice 0 plus the plant (P0, P1, P2). Real: the seven robots, their shifts, outputs, grades and wages; the floor; the catalog. Not yet: businesses built by the robots (Project #001 is a concept), revenue, payouts, the public request queue. Next: the request queue, the first robot-built business, a sorter room that moves when revenue exists.
 
-Not affiliated with xAI, SpaceX or Tesla. Not financial advice.
+Built in public by [@devHorfin](https://x.com/devHorfin). Not affiliated with xAI, SpaceX or Tesla. Not financial advice.
 
 ## License
 
