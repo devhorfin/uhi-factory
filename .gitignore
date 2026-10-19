@@ -1,0 +1,17 @@
+# runtime data written by the service (event log, outputs, logs)
+service/data/
+# deploy builds and zips
+deploy/
+# large sources: generated art masters and videos (the web-ready sprites live in site/assets/plant)
+art-src/
+social/*.mp4
+social/*.webm
+# local
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+# keys never live in this repo (read from outside: keys/xai/key.txt, ../.openai-key or env vars)
+*.key
+.openai-key
+.env

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Job catalog · UHI Factory</title>
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css?v=0.5.1"><link rel="stylesheet" href="css/factory.css?v=0.5.1">
+</head>
+<body>
+<nav class="nav" aria-label="Main"><a class="brand" href="index.html"><img src="assets/glyph.webp" alt=""> <span class="chrome">UHI FACTORY</span></a><div class="links"><a href="plant.html">The plant</a><a href="index.html#floor">Live floor</a><a href="index.html#workforce">Workforce</a><a href="index.html#launch">Request</a></div><div class="right"><span class="mono mute" id="count" style="font-size:12px"></span><a class="pill metal sm" href="index.html#launch">Request a worker</a></div></nav>
+<main class="cat wrap" id="top">
+  <p class="intro">Every robot on the floor holds one of these jobs. A shift reads real inputs, makes an output with links, and gets graded by someone other than itself. Tiers: <span class="chip ok">A</span> real on day one · <span class="chip warn">B</span> needs a key or credits · <span class="chip">C</span> practice until a client or partner exists · <span class="chip bad">D</span> never. Requests open in slice 1.</p>
+  <div class="filters" id="filters"><button class="pill sm on" type="button" data-tier="">all</button><button class="pill sm" type="button" data-tier="A">A · real now</button><button class="pill sm" type="button" data-tier="B">B · key or credits</button><button class="pill sm" type="button" data-tier="C">C · practice</button><button class="pill sm" type="button" data-tier="D">D · never</button></div>
+  <div id="list"></div>
+</main>
+<footer class="foot wrap">Catalog generated from YOUR-ROBOT-PLAN-2026-10-19.md §4. No job gives advice to a person about their money, health or legal case.</footer>
+<script type="module">
+const cat = await (await fetch('data/catalog.json')).json();
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const all = cat.industries.flatMap((i) => i.jobs);
+const tiers = (t) => all.filter((j) => j.tier === t).length;
+document.getElementById('count').innerHTML = `<b>${all.length}</b> jobs · <b>${cat.industries.length}</b> industries · A ${tiers('A')} · B ${tiers('B')} · C ${tiers('C')} · D ${tiers('D')}`;
+function render(tier) {
+  document.getElementById('list').innerHTML = cat.industries.map((ind) => {
+    const jobs = ind.jobs.filter((j) => !tier || j.tier === tier); if (!jobs.length) return '';
+    return `<h2 id="ind${ind.id}">${esc(ind.name)} <small>${jobs.length} jobs</small></h2><table>${jobs.map((j) => `<tr><td class="t">${esc(j.title)}</td><td class="tier"><span class="chip ${j.tier==='A'?'ok':j.tier==='B'?'warn':j.tier==='D'?'bad':''}">${j.tier}</span></td><td>${esc(j.does)}${j.inputs ? `<span class="io">inputs: ${esc(j.inputs)}${j.output ? ' · output: ' + esc(j.output) : ''}${j.grade ? ' · graded by ' + esc(j.grade) : ''}</span>` : ''}</td><td class="hire"><button class="pill sm" type="button" disabled title="Requests open in slice 1">request</button></td></tr>`).join('')}</table>`;
+  }).join('');
+}
+render('');
+for (const b of document.querySelectorAll('#filters button')) b.addEventListener('click', () => { document.querySelectorAll('#filters button').forEach((x) => x.classList.remove('on')); b.classList.add('on'); render(b.dataset.tier); });
+</script>
+</body>
+</html>

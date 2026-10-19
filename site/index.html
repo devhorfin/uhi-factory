@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<title>UHI Factory · Universal High Income, built by robots</title>
+<meta name="description" content="Universal High Income, built by one developer in public: robots with real jobs, wages audited per shift, output you can click, and the income rule written down before the first dollar moves. Slice 0: seven real workers, nothing paid out yet.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css?v=0.5.1"><link rel="stylesheet" href="css/factory.css?v=0.5.1">
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="#top"><img src="assets/glyph.webp" alt=""> <span class="chrome">UHI FACTORY</span></a>
+  <div class="links"><a href="plant.html">The plant</a><a href="#floor">Live floor</a><a href="#workforce">Workforce</a><a href="#split">The loop</a><a href="#launch">Request</a><a href="catalog.html">Catalog</a></div>
+  <div class="right"><span class="live" id="live">CONNECTING</span><a class="pill metal sm" href="plant.html">Enter the plant</a></div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <span class="eyebrow">Universal High Income · built by one developer, in public · slice 0</span>
+  <h1 class="chrome">Universal HIGH income.<br>The robots <img src="assets/glyph.webp" alt="">work. You don't.</h1>
+  <p class="sub">AI builds. People benefit. A workforce of Grok-powered robots does real work every shift. What they earn pays their wages, and the rest is distributed. Built in public, one robot at a time.</p>
+  <p class="blend">The claim: AI and robots will produce goods and services far in excess of the money supply, so everyone can be paid a high income without inflation, and work becomes optional. Everyone argues about it. Nobody has built the small, checkable version. UHI Factory is that version, built by one developer in the open: robots with real jobs, wages you can audit per shift, output you can click, and the income rule written down before the first dollar moves. This week the story turned from cheques to shares: <a href="https://www.cnbc.com/2026/10/19/elon-musk-spacex-shares-giveaway-kids.html" target="_blank" rel="noopener">a SpaceX share pledged to every kid in America</a>, and <a href="https://x.ai/news/grok-bot-procurement" target="_blank" rel="noopener">Grok Bots running procurement</a> for a real company. Production first, then distribution. That is the whole idea.</p>
+  <div class="hairline"></div>
+  <div class="ctas" style="margin-top:22px"><a class="pill metal" href="plant.html" style="min-height:48px;padding:0 24px;font-size:16px">▶ Enter the plant · watch the robots work</a><a class="pill" href="#split">How it pays for itself</a><a class="pill" href="catalog.html">173 jobs</a></div><p class="blend" style="margin-top:12px;font-size:13px">The plant is a live isometric factory: 30 halls, one per industry, and the agency. Every move on the floor is an event from the robots' real shift log. Nothing loops for show.</p>
+  <div class="stats" id="stats">
+    <div class="stat"><div class="n mono chrome" id="sWorkers">—</div><div class="l">Robots working</div><div class="s">real, on shift now, wages tagged</div></div>
+    <div class="stat"><div class="n mono chrome">0</div><div class="l">Businesses launched</div><div class="s">Project #001 is a concept</div></div>
+    <div class="stat"><div class="n mono chrome">$0</div><div class="l">Verified revenue</div><div class="s">nothing sold yet</div></div>
+    <div class="stat"><div class="n mono chrome">$0</div><div class="l">Income distributed</div><div class="s">nothing paid out yet</div></div>
+  </div>
+</header>
+
+<section class="wrap" id="floor" aria-label="The live floor">
+  <div class="window">
+    <div class="win-bar"><i></i><i></i><i></i><span class="t">THE FLOOR · LIVE</span><a class="pill sm" href="plant.html" style="margin-left:10px">Full screen ↗</a><div class="r"><button class="pill sm on" type="button" id="viewGraph">Graph</button><button class="pill sm" type="button" id="viewPlant">Plant</button><button class="pill sm" type="button" id="attract" title="Let the camera wander">Attract</button><button class="pill sm" type="button" id="sound" title="Procedural sound, off by default">Sound</button><span class="chip ok" id="fps">— FPS</span></div></div>
+    <div class="win-body">
+      <div class="figs" id="figs"></div>
+      <div class="fig" style="margin-top:14px"><div><h2 id="figTitle">Fig. 00 — The economy</h2><div class="eyebrow" id="figKind">ECONOMY</div></div><div class="instr" id="figInstr"></div></div>
+      <div class="verbs" id="verbs"></div>
+      <div class="stage" id="stage"><canvas id="graph"></canvas><canvas id="plant" hidden></canvas><div class="crumb" id="crumb"></div><div class="tip" id="tip" hidden></div><div class="caption" id="caption" hidden></div><div class="foot" id="stageFoot"></div></div>
+      <div class="controls">
+        <div><label class="eyebrow" for="motion">Forecast motion</label><input type="range" id="motion" min="0" max="100" value="60"><div class="count" id="countLine"></div></div>
+        <div class="mute" style="font:400 12px/1.5 var(--mono);max-width:320px">Real workers move on real events from the shift log. The forecast floor is modelled and labelled; its numbers are never counted.</div>
+      </div>
+      <div class="wb" id="wb"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="workforce">
+  <div class="head"><div><span class="num">01</span><h2>Agent workforce</h2><p class="lede">The production side of the claim. Seven robots on real shifts: real inputs, an output with links, a grade from someone other than themselves. Every shift's wage is tagged, so "robots produce more than they cost" is a number here, not a slogan.</p></div><span class="chip acc" id="wfModel">MODEL</span></div>
+  <div class="workforce" id="wfGrid"></div>
+</section>
+
+<section class="sec wrap" id="project">
+  <div class="head"><div><span class="num">02</span><h2>Project #001 — AI website maintenance</h2><p class="lede">A subscription service built and managed by Grok agents. Customers pay for verified maintenance work, creating recurring revenue rather than one-off demonstrations.</p></div><span class="chip">CONCEPT · NOT STARTED</span></div>
+  <div class="cards">
+    <div class="card dashed"><h3>Grok Researcher</h3><p>Finds unmet customer needs.</p><ul><li><span>status</span><span class="mono">next hire</span></li></ul></div>
+    <div class="card dashed"><h3>Grok Builder</h3><p>Writes code and deploys products. Grok Build is open source: tools, extension system, subagents.</p><ul><li><span>status</span><span class="mono">next hire</span></li></ul></div>
+    <div class="card dashed"><h3>Grok Operator</h3><p>Handles customer onboarding and support.</p><ul><li><span>status</span><span class="mono">next hire</span></li></ul></div>
+    <div class="card dashed"><h3>Grok Treasurer</h3><p>Audits earnings and prepares distributions. Custom MCP connectors expose the business, payment and accounting APIs.</p><ul><li><span>status</span><span class="mono">next hire</span></li></ul></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="split">
+  <div class="head"><div><span class="num">03</span><h2>How it pays for itself</h2><p class="lede">The distribution side of the claim, written down first. The robots build businesses. Only verified revenue counts. Revenue pays the robots' wages, tracked per shift, and what is left is distributed by a rule written before the first payout: a check for everyone who signs up. Until revenue covers the wages, the developer pays them. Every dollar is publicly tracked.</p></div><span class="chip warn">THE LOOP · WRITTEN DOWN FIRST</span></div>
+  <div class="cards">
+    <div class="card"><div class="big mono">1</div><h3>Build</h3><p>Robots build real businesses. Project #001 is the first; the workforce researches, builds, operates and keeps the books.</p><ul><li><span>businesses</span><span class="mono">0 launched · 1 in concept</span></li></ul></div>
+    <div class="card"><div class="big mono">2</div><h3>Earn</h3><p>Customers pay for verified work. Revenue is counted only when it is verified, never promised.</p><ul><li><span>verified revenue</span><span class="mono">$0</span></li></ul></div>
+    <div class="card"><div class="big mono">3</div><h3>Pay wages</h3><p>Every shift costs compute. The cost is tagged on the shift and summed in the ledger. A robot that is not earning sleeps.</p><ul><li><span>wages so far</span><span class="mono" id="loopWages">—</span></li></ul></div>
+    <div class="card"><div class="big mono">4</div><h3>Distribute</h3><p>What is left after wages is the income. The rule is written before the first payout: a check for everyone who signs up, the same for all.</p><ul><li><span>distributed</span><span class="mono">$0 · accrual mode</span></li></ul></div>
+  </div>
+  <div class="cards" style="margin-top:12px">
+    <div class="card" id="ledger"><h3>Every dollar tracked</h3><p>Real spend so far, from the shift log.</p><ul id="ledgerList"></ul></div>
+    <div class="card"><h3>What is real today</h3><p>Seven robots, their shifts, outputs and grades. The floor, the catalog, this page.</p><ul><li><span>businesses</span><span class="mono">0</span></li><li><span>revenue</span><span class="mono">$0</span></li><li><span>payouts</span><span class="mono">none · accrual mode</span></li><li><span>wages paid by</span><span class="mono">the developer, until revenue covers them</span></li></ul></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="launch">
+  <div class="head"><div><span class="num">04</span><h2>Request a worker</h2><p class="lede">Universal means anyone can ask for a robot. Pick a job from the catalog, name it, say what it should produce. The developer builds the ones that earn their keep, in public, and they join the floor. No payment, no account. Requests open in slice 1.</p></div><span class="chip">OPENS IN SLICE 1</span></div>
+  <div class="launch">
+    <form id="launchForm" onsubmit="return false">
+      <div class="fld"><label for="lJob">Job</label><select id="lJob"></select></div>
+      <div class="fld"><label for="lName">Worker name</label><input id="lName" placeholder="e.g. Grok Ledger" maxlength="32"></div>
+      <div class="fld"><label for="lTicker">What should it produce?</label><input id="lTicker" placeholder="e.g. a weekly report on robot-maker funding" maxlength="120"></div>
+      <div class="ctas" style="display:flex;gap:10px;flex-wrap:wrap"><button class="pill metal" type="button" disabled title="Opens in slice 1">Send the request</button><a class="pill" href="catalog.html">Browse 173 jobs</a></div>
+      <div class="note">Practice only. Nothing is sent yet. In slice 1 requests go to a public queue; the developer picks from it and every build is logged on the floor.</div>
+    </form>
+    <div class="preview" id="lPreview"></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="agency">
+  <div class="head"><div><span class="num">05</span><h2>The agency</h2><p class="lede">Stream, trace and payroll. The income runs as a ledger first: accrued, visible, nothing sent until there is revenue to send and the legal basis is confirmed. A high income you can audit beats a high income you are promised.</p></div></div>
+  <div class="strip">
+    <div class="panel"><div class="h"><span class="role">AGENT ACTIONS / STREAM</span><span class="id">LIVE</span></div><div class="big" id="actions">—</div><div class="bars" id="bars"></div><div class="sub" id="streamSub"></div></div>
+    <div class="panel"><div class="h"><span class="role">SHIFT TRACE</span><span class="id">RECORD</span></div><div class="trace" id="trace"></div></div>
+    <div class="panel"><div class="h"><span class="role">PAYROLL READINESS</span><span class="id">FRI</span></div><div class="ready" id="ready">—</div><div class="sub" id="readySub"></div><div class="meter" id="meters"></div></div>
+  </div>
+</section>
+
+<footer class="foot wrap">UHI Factory is a concept interface, slice 0. Seven real workers on real shifts (GeckoTerminal, RugCheck, GDELT, arXiv, wheretheiss.at, The Space Devs), written by <span id="fModel">a Grok model</span> and graded by a second robot; wages paid by the developer until revenue covers them. The forecast population is modelled and labelled; its numbers are never counted. No payments, no payouts yet. Built by one developer in public. Not affiliated with xAI, SpaceX or Tesla. Not financial advice. v<span id="v">0.5.1</span></footer>
+
+<div class="modal" id="modal"><div class="box" id="modalBody"></div></div>
+<script type="module" src="js/app.js?v=0.5.1"></script>
+</body>
+</html>

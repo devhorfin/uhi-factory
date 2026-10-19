@@ -1,0 +1,102 @@
+{
+ "tile-floor": {
+  "w": 467,
+  "h": 512
+ },
+ "tile-dock": {
+  "w": 512,
+  "h": 453
+ },
+ "wall-north": {
+  "w": 471,
+  "h": 512
+ },
+ "wall-west": {
+  "w": 512,
+  "h": 502
+ },
+ "door-roller": {
+  "w": 512,
+  "h": 489
+ },
+ "station-desk": {
+  "w": 442,
+  "h": 512
+ },
+ "station-scanner": {
+  "w": 512,
+  "h": 512
+ },
+ "station-bench": {
+  "w": 484,
+  "h": 512
+ },
+ "station-chair": {
+  "w": 504,
+  "h": 512
+ },
+ "belt-straight": {
+  "w": 512,
+  "h": 391
+ },
+ "belt-curve": {
+  "w": 464,
+  "h": 512
+ },
+ "belt-end": {
+  "w": 512,
+  "h": 506
+ },
+ "gate-booth": {
+  "w": 455,
+  "h": 512
+ },
+ "chute": {
+  "w": 499,
+  "h": 512
+ },
+ "crate-fee": {
+  "w": 508,
+  "h": 512
+ },
+ "crate-output": {
+  "w": 512,
+  "h": 506
+ },
+ "bot-idle": {
+  "w": 504,
+  "h": 512
+ },
+ "bot-walk-a": {
+  "w": 508,
+  "h": 512
+ },
+ "bot-walk-b": {
+  "w": 512,
+  "h": 500
+ },
+ "bot-work": {
+  "w": 457,
+  "h": 512
+ },
+ "bot-carry": {
+  "w": 408,
+  "h": 512
+ },
+ "lamp-pass": {
+  "w": 512,
+  "h": 511
+ },
+ "lamp-low": {
+  "w": 336,
+  "h": 512
+ },
+ "sign-forecast": {
+  "w": 351,
+  "h": 512
+ },
+ "lamp-hand": {
+  "w": 237,
+  "h": 512
+ }
+}

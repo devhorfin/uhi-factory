@@ -1,0 +1,1743 @@
+{
+ "generated": "2026-10-19",
+ "source": "YOUR-ROBOT-PLAN-2026-10-19.md §4",
+ "industries": [
+  {
+   "id": 1,
+   "name": "Markets and trading",
+   "jobs": [
+    {
+     "title": "Desk analyst",
+     "does": "every 15 min, reads new and trending pools, flags the three with the strongest buyers-vs-sellers and liquidity, writes a note",
+     "inputs": "GeckoTerminal, DexScreener, Jupiter",
+     "output": "a dated note per window",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": "graded by the 1h outcome"
+    },
+    {
+     "title": "Listing auditor",
+     "does": "checks every new listing and the day's most active markets: mint authority, freeze, top-10 holders, LP lock, creator history",
+     "inputs": "RugCheck, Solana RPC",
+     "output": "a pass/fail card with reasons",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Paper trader",
+     "does": "runs a stated rule (DOTSCREW's engine) against real quotes, books fills from Jupiter quotes, keeps a public PnL",
+     "inputs": "Jupiter, GeckoTerminal",
+     "output": "a live tape and PnL",
+     "tier": "A",
+     "tierNote": "A (never a real wallet)",
+     "grade": "graded by the PnL"
+    },
+    {
+     "title": "Fee accountant",
+     "does": "reads the pad treasury and every robot's fee share, closes the week, writes the stubs",
+     "inputs": "Solana RPC, pump fee program",
+     "output": "the Friday ledger",
+     "tier": "A",
+     "tierNote": "A (this robot runs the payroll's books)",
+     "grade": ""
+    },
+    {
+     "title": "Route finder",
+     "does": "for the Friday basket, finds the best Jupiter routes and price impact, dry-runs the swaps",
+     "inputs": "Jupiter lite API",
+     "output": "a route report",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": "graded by realised impact"
+    },
+    {
+     "title": "Airdrop and points scout",
+     "does": "tracks announced points programs and eligibility rules, no farming",
+     "inputs": "project docs, X public posts via Bluesky/X search",
+     "output": "a weekly eligibility sheet",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Prediction-market reader",
+     "does": "reads Polymarket and Kalshi prices on the week's questions, writes the odds brief",
+     "inputs": "Polymarket API, Kalshi public",
+     "output": "a daily odds page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Whale watcher",
+     "does": "follows a public list of wallets, posts their swaps with context",
+     "inputs": "Solana RPC (OPENHUMAN's wallet-feed)",
+     "output": "a feed",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Token-launch historian",
+     "does": "for any CA, rebuilds the coin's life from candles and trades (AGORA's desk recipe)",
+     "inputs": "GeckoTerminal",
+     "output": "a dated timeline",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Liquidity reporter",
+     "does": "reads pool depth for the robot-index stocks and warns when a swap would exceed a cap",
+     "inputs": "DexScreener",
+     "output": "a depth gauge",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "DeFi yield reader",
+     "does": "lists stablecoin yields across Solana venues with the risks in words",
+     "inputs": "venue APIs",
+     "output": "a weekly table",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Sniper, bundler, MEV bot",
+     "does": "D (as a product; the paper trader is the honest version)",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D (as a product; the paper trader is the honest version)",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Stocks, macro and the economy",
+   "jobs": [
+    {
+     "title": "Robot-index reporter",
+     "does": "daily: the basket vs cash since launch, SPCX/TSLA/NVDA headlines",
+     "inputs": "tokenized-stock pools, SEC EDGAR filings, FRED",
+     "output": "a daily card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Earnings-call listener",
+     "does": "reads transcripts the day they appear, pulls the Optimus / robotics lines",
+     "inputs": "public transcripts, EDGAR 8-K",
+     "output": "a highlights note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Fed and inflation watcher",
+     "does": "CPI, PCE, rates, the Fed's calendar; writes the \"did printing cause inflation\" tracker the UHI argument needs",
+     "inputs": "FRED, BLS API",
+     "output": "a monthly chart with a sentence",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Debt clock keeper",
+     "does": "the $40T US debt, interest cost, Musk's \"AI or bankrupt\" claim checked against the numbers",
+     "inputs": "Treasury FiscalData, FRED",
+     "output": "a live page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Jobs-report reader",
+     "does": "BLS releases, the recent-grad gap, AI-exposed occupations",
+     "inputs": "BLS, NY Fed",
+     "output": "a monthly \"is AI taking jobs\" scorecard",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "13F tracker",
+     "does": "what big funds hold in the index names each quarter",
+     "inputs": "EDGAR",
+     "output": "a quarterly note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Commodity desk",
+     "does": "oil, gold, copper, wheat with one-line causes",
+     "inputs": "FRED, EIA",
+     "output": "a daily strip",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Investment adviser",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Software and open source",
+   "jobs": [
+    {
+     "title": "Code reviewer",
+     "does": "reviews pull requests on opted-in repos, leaves structured comments",
+     "inputs": "GitHub App",
+     "output": "review comments",
+     "tier": "C",
+     "tierNote": "C (A on our own repos)",
+     "grade": "graded by maintainer reaction"
+    },
+    {
+     "title": "Issue triager",
+     "does": "labels, duplicates, repro steps on opted-in repos",
+     "inputs": "GitHub API",
+     "output": "triage log",
+     "tier": "C",
+     "tierNote": "C / A on ours",
+     "grade": ""
+    },
+    {
+     "title": "Bug fixer",
+     "does": "picks a `robot` labelled issue, opens a PR with tests",
+     "inputs": "GitHub App, CI",
+     "output": "PR",
+     "tier": "C",
+     "tierNote": "C (PAYROLL's slice 1)",
+     "grade": "graded by merge"
+    },
+    {
+     "title": "Test writer",
+     "does": "adds tests to untested functions in our own projects",
+     "inputs": "local runners",
+     "output": "PRs",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Dependency watchman",
+     "does": "scans our projects for outdated or vulnerable packages, opens the bump PR",
+     "inputs": "npm/PyPI advisories",
+     "output": "PRs",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Docs writer",
+     "does": "turns a repo into a README and a docs page (document-generate skill)",
+     "inputs": "GitHub",
+     "output": "pages",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Release notes clerk",
+     "does": "writes changelogs from merged PRs",
+     "inputs": "GitHub",
+     "output": "notes",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Repo scout",
+     "does": "finds trending repos in a niche and writes the one-paragraph why",
+     "inputs": "GitHub search",
+     "output": "a daily list",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Site QA tester",
+     "does": "runs our headless QA (both viewports, console errors) on every deploy",
+     "inputs": "gstack browse",
+     "output": "a QA report",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Games",
+   "jobs": [
+    {
+     "title": "Game maker",
+     "does": "turns a one-sentence idea into a playable single-file game (Playgroundpad)",
+     "inputs": "our pipeline",
+     "output": "a game link",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Level designer",
+     "does": "adds a level or a mode to an existing game each week",
+     "inputs": "our games",
+     "output": "a build",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Playtester",
+     "does": "plays our games headlessly, reports crashes, balance and frame rate",
+     "inputs": "canvas-game-qa",
+     "output": "a report",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Speedrun verifier",
+     "does": "checks submitted runs against rules (for our games)",
+     "inputs": "our ledgers",
+     "output": "verdicts",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Steam-hours clerk",
+     "does": "the JAILBREAK ledger: snapshots, deltas, weekly shares",
+     "inputs": "Steam Web API",
+     "output": "the weekly table",
+     "tier": "B",
+     "tierNote": "B (key held)",
+     "grade": ""
+    },
+    {
+     "title": "Esports scout",
+     "does": "match results and upsets in a title",
+     "inputs": "public schedules",
+     "output": "a weekly note",
+     "tier": "C",
+     "tierNote": "C",
+     "grade": ""
+    },
+    {
+     "title": "Game economist",
+     "does": "watches in-game economies we run (KEKIUS, MONS) and tunes drop rates by rule",
+     "inputs": "our data",
+     "output": "a tuning note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Art, design and 3D",
+   "jobs": [
+    {
+     "title": "Illustrator",
+     "does": "generates the day's art for a brief (owner's GPT image flow)",
+     "inputs": "image generation",
+     "output": "images",
+     "tier": "B",
+     "tierNote": "B (credits/owner runs prompts)",
+     "grade": ""
+    },
+    {
+     "title": "Cutout and sprite maker",
+     "does": "background removal, 9-slice, sprite sheets from generated art",
+     "inputs": "rembg, PIL",
+     "output": "assets",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "3D modeler",
+     "does": "image → 3D → optimized GLB (Tripo + Blender headless)",
+     "inputs": "Tripo credits, Blender",
+     "output": "GLB with draw-call report",
+     "tier": "B",
+     "tierNote": "B",
+     "grade": ""
+    },
+    {
+     "title": "Scene renderer",
+     "does": "renders dioramas and product shots in headless Blender",
+     "inputs": "Blender",
+     "output": "renders",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Logo and brand clerk",
+     "does": "variations of an approved mark, favicons, OG cards",
+     "inputs": "generation + PIL",
+     "output": "files",
+     "tier": "B",
+     "tierNote": "B",
+     "grade": ""
+    },
+    {
+     "title": "Design critic",
+     "does": "runs the design-review checklist on a page and writes the fixes",
+     "inputs": "our skills",
+     "output": "a report",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Mockup maker",
+     "does": "Stitch screens from a brief",
+     "inputs": "Stitch MCP",
+     "output": "screens",
+     "tier": "B",
+     "tierNote": "B",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "Video, music and audio",
+   "jobs": [
+    {
+     "title": "Video editor",
+     "does": "cuts a 30-second product clip from screen recordings",
+     "inputs": "ffmpeg, our recorders",
+     "output": "an mp4",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Video generator",
+     "does": "Seedance-style clips from a prompt (our recipe)",
+     "inputs": "generation credits",
+     "output": "an mp4",
+     "tier": "B",
+     "tierNote": "B",
+     "grade": ""
+    },
+    {
+     "title": "Composer",
+     "does": "a track per week for a coin or game",
+     "inputs": "music generation",
+     "output": "an mp3",
+     "tier": "B",
+     "tierNote": "B (STAGE seed)",
+     "grade": ""
+    },
+    {
+     "title": "Voice narrator",
+     "does": "reads the day's brief as audio",
+     "inputs": "TTS",
+     "output": "an mp3",
+     "tier": "B",
+     "tierNote": "B",
+     "grade": ""
+    },
+    {
+     "title": "Podcast producer",
+     "does": "turns a thread of robot notes into a two-voice script and audio",
+     "inputs": "TTS",
+     "output": "an episode",
+     "tier": "B",
+     "tierNote": "B",
+     "grade": ""
+    },
+    {
+     "title": "Subtitle clerk",
+     "does": "transcribes and captions our clips",
+     "inputs": "Whisper local",
+     "output": "srt files",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "name": "Writing, media and publishing",
+   "jobs": [
+    {
+     "title": "News editor",
+     "does": "a daily brief on one beat (AI jobs, robots, space, crypto policy) from live events",
+     "inputs": "GDELT 15-min exports, Bluesky search",
+     "output": "a daily page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Fact checker",
+     "does": "takes a viral claim and writes what the sources say, with links",
+     "inputs": "same + primary docs",
+     "output": "a verdict card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": "graded by a second robot"
+    },
+    {
+     "title": "Thread writer",
+     "does": "drafts X posts in the owner's science voice for a project (science-launch-posts rules)",
+     "inputs": "our files",
+     "output": "drafts for a human to post",
+     "tier": "A",
+     "tierNote": "A (never auto-posts)",
+     "grade": ""
+    },
+    {
+     "title": "Translator",
+     "does": "translates our pages and posts into 6 languages",
+     "inputs": "model",
+     "output": "files",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Newsletter compiler",
+     "does": "weekly: every robot's best output, formatted",
+     "inputs": "our logs",
+     "output": "an email-ready page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Copy editor",
+     "does": "fixes grammar and length on our pages (no voice changes)",
+     "inputs": "our files",
+     "output": "PRs",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Ghostwriter for the robots",
+     "does": "each robot's weekly first-person report (`#coin-speaks-first-person`, labelled AI)",
+     "inputs": "logs",
+     "output": "a post draft",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "name": "Science and research",
+   "jobs": [
+    {
+     "title": "Lab researcher",
+     "does": "reads new arXiv/bioRxiv papers on a topic and writes the one-page digest with an evidence ladder (PROJECT 486 shape)",
+     "inputs": "arXiv, bioRxiv, PubMed",
+     "output": "a daily digest",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Replication checker",
+     "does": "for a paper with code, reruns what runs on our machine and reports",
+     "inputs": "GitHub, local",
+     "output": "a report",
+     "tier": "A",
+     "tierNote": "A (where the code is small)",
+     "grade": ""
+    },
+    {
+     "title": "Clinical-trials watcher",
+     "does": "new trials in a condition, phases, sponsors; information only",
+     "inputs": "ClinicalTrials.gov",
+     "output": "a weekly table",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Drug-approval clerk",
+     "does": "FDA actions this week",
+     "inputs": "openFDA",
+     "output": "a list",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Materials scout",
+     "does": "superconductor / battery claims and their status",
+     "inputs": "arXiv",
+     "output": "a tracker",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Quantum-run clerk",
+     "does": "submits a catalogued circuit to a real machine and posts the counts (qLAB shape)",
+     "inputs": "IBM runtime",
+     "output": "raw counts",
+     "tier": "B",
+     "tierNote": "B (costs machine time)",
+     "grade": ""
+    },
+    {
+     "title": "Citation checker",
+     "does": "verifies that a document's references exist and say what is claimed",
+     "inputs": "Crossref, arXiv",
+     "output": "a report",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Medical adviser",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Space and aerospace",
+   "jobs": [
+    {
+     "title": "Satellite tracker",
+     "does": "passes of Starlink and ISS over a city, launches this week",
+     "inputs": "Celestrak TLEs, Launch Library",
+     "output": "a daily sky card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Launch-manifest clerk",
+     "does": "every SpaceX / rival launch, outcome, payload",
+     "inputs": "Launch Library 2",
+     "output": "a running table",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Mars-weather reporter",
+     "does": "from NASA's rover feeds when available",
+     "inputs": "NASA APIs",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Near-Earth-object watcher",
+     "does": "close approaches this week",
+     "inputs": "NASA NeoWs",
+     "output": "a list",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Orbital-debris counter",
+     "does": "catalogue growth and notable events",
+     "inputs": "Celestrak",
+     "output": "a monthly chart",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Energy and climate",
+   "jobs": [
+    {
+     "title": "Grid watcher",
+     "does": "a region's demand, generation mix and prices (data-centre load story)",
+     "inputs": "EIA, grid operators' public feeds",
+     "output": "a daily chart",
+     "tier": "B",
+     "tierNote": "B (EIA key, free)",
+     "grade": ""
+    },
+    {
+     "title": "Solar-cost tracker",
+     "does": "the \"energy gets cheap\" leg of the abundance story, with sources",
+     "inputs": "IRENA, EIA",
+     "output": "a quarterly note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Weather forecaster",
+     "does": "a city's week, plus extremes",
+     "inputs": "Open-Meteo",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Storm and wildfire reporter",
+     "does": "active events and their public data",
+     "inputs": "NOAA, NASA FIRMS",
+     "output": "a map note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Carbon-market reader",
+     "does": "EU ETS and voluntary credit prices",
+     "inputs": "public quotes",
+     "output": "a weekly line",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Agriculture and food",
+   "jobs": [
+    {
+     "title": "Crop reporter",
+     "does": "USDA weekly conditions and prices for a crop",
+     "inputs": "USDA NASS",
+     "output": "a note",
+     "tier": "B",
+     "tierNote": "B (free key)",
+     "grade": ""
+    },
+    {
+     "title": "Food-price index clerk",
+     "does": "the FAO and BLS food indices in one line each month",
+     "inputs": "FAO, BLS",
+     "output": "a chart",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Recipe developer",
+     "does": "a weekly recipe from what's in season and cheap",
+     "inputs": "price data",
+     "output": "a page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Farm-robot scout",
+     "does": "what robotic agriculture shipped this month",
+     "inputs": "news, company pages",
+     "output": "a digest",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "name": "Manufacturing, robotics and hardware",
+   "jobs": [
+    {
+     "title": "Humanoid-robot tracker",
+     "does": "every announced humanoid (Optimus, Figure, Unitree, Chinese entrants), claimed specs, shipped units",
+     "inputs": "company pages, news",
+     "output": "a comparison table",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Factory-automation reader",
+     "does": "robot density and orders by country",
+     "inputs": "IFR public summaries",
+     "output": "a yearly chart",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Chip-supply clerk",
+     "does": "wafer, HBM and GPU lead-time signals from public filings",
+     "inputs": "EDGAR, company IR",
+     "output": "a monthly note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "3D-print job runner",
+     "does": "C (needs a printer and a client)",
+     "inputs": "",
+     "output": "",
+     "tier": "C",
+     "tierNote": "C (needs a printer and a client)",
+     "grade": ""
+    },
+    {
+     "title": "Spec-sheet writer",
+     "does": "turns a product idea into a bill of materials with public prices",
+     "inputs": "supplier sites",
+     "output": "a sheet",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Transport and logistics",
+   "jobs": [
+    {
+     "title": "Flight tracker",
+     "does": "live aircraft over an area, delays at an airport",
+     "inputs": "OpenSky Network",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Shipping-lane reporter",
+     "does": "port congestion and freight indices",
+     "inputs": "public indices",
+     "output": "a weekly note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Robotaxi scout",
+     "does": "Cybercab / Waymo / Zoox service areas and public incident reports",
+     "inputs": "company and regulator pages",
+     "output": "a tracker",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Route planner",
+     "does": "the week's deliveries for a small business, optimised",
+     "inputs": "OpenStreetMap",
+     "output": "a route",
+     "tier": "C",
+     "tierNote": "C (needs a client)",
+     "grade": ""
+    },
+    {
+     "title": "EV-charging mapper",
+     "does": "chargers and prices along a corridor",
+     "inputs": "OpenChargeMap",
+     "output": "a map note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Real estate and housing",
+   "jobs": [
+    {
+     "title": "Housing-gap reporter",
+     "does": "the 4–10M shortfall, starts, permits, rents; the \"penthouse problem\" leg of the story",
+     "inputs": "FRED, Census, Realtor research",
+     "output": "a monthly page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Listing analyst",
+     "does": "a neighbourhood's asking prices vs last year, from public listings",
+     "inputs": "public portals",
+     "output": "a note",
+     "tier": "C",
+     "tierNote": "C (portal terms)",
+     "grade": ""
+    },
+    {
+     "title": "Rent-vs-buy clerk",
+     "does": "a calculator kept current with rates",
+     "inputs": "FRED",
+     "output": "a tool",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Robotic-construction scout",
+     "does": "3D-printed homes, robotic framing: who shipped what",
+     "inputs": "news",
+     "output": "a digest",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Property adviser",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "name": "Retail and e-commerce",
+   "jobs": [
+    {
+     "title": "Shopper agent",
+     "does": "finds the three best-priced listings for a described product across permitted merchant APIs (GROKAZON's search bar)",
+     "inputs": "merchant APIs, DummyJSON meanwhile",
+     "output": "a comparison",
+     "tier": "B",
+     "tierNote": "B/C",
+     "grade": ""
+    },
+    {
+     "title": "Price watcher",
+     "does": "tracks a basket of goods and posts changes",
+     "inputs": "merchant APIs",
+     "output": "a weekly line",
+     "tier": "C",
+     "tierNote": "C",
+     "grade": ""
+    },
+    {
+     "title": "Product describer",
+     "does": "writes listings from photos for a merchant",
+     "inputs": "model",
+     "output": "copy",
+     "tier": "C",
+     "tierNote": "C (needs a merchant)",
+     "grade": ""
+    },
+    {
+     "title": "Return-policy reader",
+     "does": "summarises a store's policies in plain words",
+     "inputs": "store pages",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Deal-of-the-day scout",
+     "does": "public deals in a category",
+     "inputs": "public feeds",
+     "output": "a daily list",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Marketing and the creator economy",
+   "jobs": [
+    {
+     "title": "Social analyst",
+     "does": "which posts in a niche worked this week, from public counts",
+     "inputs": "Bluesky search, X public pages via the pane",
+     "output": "a weekly note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Caption writer",
+     "does": "captions and bios for a project in the owner's voice",
+     "inputs": "our skill",
+     "output": "drafts",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Campaign planner",
+     "does": "a week of posts, dated, for a launch (science-launch flow)",
+     "inputs": "our files",
+     "output": "a plan",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Ad-copy tester",
+     "does": "writes variants and scores them by a stated rubric",
+     "inputs": "model",
+     "output": "a table",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Influencer scout",
+     "does": "accounts in a niche with real engagement, from public data",
+     "inputs": "public counts",
+     "output": "a list",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "AI influencer",
+     "does": "a labelled AI persona that posts daily (Scale's lane) under `#ai-posting-rules`",
+     "inputs": "generation",
+     "output": "posts",
+     "tier": "B",
+     "tierNote": "B (labelled, never a real person's likeness)",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "name": "Customer support and operations",
+   "jobs": [
+    {
+     "title": "Support drafter",
+     "does": "drafts replies to a project's public questions (X replies, GitHub issues) for a human to send",
+     "inputs": "public feeds",
+     "output": "drafts",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "FAQ builder",
+     "does": "turns a week of questions into a FAQ page",
+     "inputs": "logs",
+     "output": "a page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Status-page keeper",
+     "does": "pings our sites and services and writes incidents",
+     "inputs": "our monitors",
+     "output": "a status page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Ticket router",
+     "does": "classifies a client's inbox",
+     "inputs": "",
+     "output": "",
+     "tier": "C",
+     "tierNote": "C (needs a client and consent)",
+     "grade": ""
+    },
+    {
+     "title": "Onboarding guide",
+     "does": "writes the \"first five minutes\" guide for a product from its own pages",
+     "inputs": "our pages",
+     "output": "a guide",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Finance operations and accounting",
+   "jobs": [
+    {
+     "title": "Bookkeeper",
+     "does": "the pad's own books: fees in, compute out, pot, payroll, in a public ledger",
+     "inputs": "chain + our logs",
+     "output": "a monthly statement",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Invoice clerk",
+     "does": "invoices for the owner's clients from a template (chunchow-invoice exists)",
+     "inputs": "our template",
+     "output": "PDFs",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Tax-calendar keeper",
+     "does": "dates and forms by jurisdiction, information only",
+     "inputs": "public sources",
+     "output": "a calendar",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Treasury reporter",
+     "does": "what the treasury holds, where, with proofs",
+     "inputs": "chain",
+     "output": "a page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Tax adviser / accountant of record",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Legal and compliance (information only)",
+   "jobs": [
+    {
+     "title": "Court watcher",
+     "does": "new filings in named cases (crypto, AI, labour)",
+     "inputs": "CourtListener API",
+     "output": "a weekly note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Bill tracker",
+     "does": "AI, UBI, robot-tax and sovereign-fund bills: status, sponsors, text changes",
+     "inputs": "Congress.gov API",
+     "output": "a tracker",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Terms-of-service reader",
+     "does": "plain-words summaries of a service's terms and what changed",
+     "inputs": "public pages",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Licence checker",
+     "does": "verifies the licence of every third-party asset in our projects (our own hard rule)",
+     "inputs": "repo files",
+     "output": "a report",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Regulator-action clerk",
+     "does": "SEC, CFTC, FCA actions mentioning tokens or AI",
+     "inputs": "agency pages",
+     "output": "a weekly list",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Legal adviser",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "name": "Government, civic and policy",
+   "jobs": [
+    {
+     "title": "UBI-pilot tracker",
+     "does": "the 160+ US basic-income pilots: status, amounts, results",
+     "inputs": "Stanford Basic Income Lab, pilot pages",
+     "output": "a map and table",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "AI-dividend scoreboard",
+     "does": "every public pledge (Anthropic 5%, OpenAI 5%, Trump Accounts, Shotwell, Musk's share) with today's value",
+     "inputs": "public filings and prices",
+     "output": "the CHECKS VS SHARES board",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Election-calendar clerk",
+     "does": "dates, registration deadlines, results as published",
+     "inputs": "official sources",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A (no advocacy)",
+     "grade": ""
+    },
+    {
+     "title": "Public-spending reader",
+     "does": "what a budget line pays for, plain words",
+     "inputs": "official data",
+     "output": "a note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Campaigner",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Education",
+   "jobs": [
+    {
+     "title": "Tutor",
+     "does": "a lesson a day on a syllabus, with exercises and answers",
+     "inputs": "model, open textbooks",
+     "output": "a page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Exam-question writer",
+     "does": "practice questions from a syllabus, graded by a second robot",
+     "inputs": "model",
+     "output": "sets",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Course summariser",
+     "does": "turns a public course's materials into notes",
+     "inputs": "open courseware",
+     "output": "notes",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Flashcard maker",
+     "does": "from any page",
+     "inputs": "model",
+     "output": "decks",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Language partner",
+     "does": "daily dialogues at a level",
+     "inputs": "model",
+     "output": "a page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Health and fitness (information only)",
+   "jobs": [
+    {
+     "title": "Fitness-plan writer",
+     "does": "a week's plan from stated goals, with the usual cautions",
+     "inputs": "model",
+     "output": "a plan",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Sleep and step reporter",
+     "does": "reads the holder's own exported data if they upload it",
+     "inputs": "uploads",
+     "output": "a weekly chart",
+     "tier": "A",
+     "tierNote": "A (their data stays theirs)",
+     "grade": ""
+    },
+    {
+     "title": "Nutrition-label reader",
+     "does": "explains a label",
+     "inputs": "model",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Public-health watcher",
+     "does": "outbreak reports and vaccine schedules from official sources",
+     "inputs": "WHO, CDC",
+     "output": "a weekly note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Doctor, therapist, diagnostician",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "name": "Recruiting and HR",
+   "jobs": [
+    {
+     "title": "Job-board scout",
+     "does": "roles in a niche, from public boards, with the \"AI exposure\" tag",
+     "inputs": "public boards, BLS",
+     "output": "a weekly list",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "CV reviewer",
+     "does": "feedback on an uploaded CV",
+     "inputs": "uploads",
+     "output": "notes",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Interview-question writer",
+     "does": "for a stated role",
+     "inputs": "model",
+     "output": "sets",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Layoff tracker",
+     "does": "announced cuts and the AI reason given",
+     "inputs": "public trackers, filings",
+     "output": "a monthly table",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Recruiter of record",
+     "does": "C (needs an employer)",
+     "inputs": "",
+     "output": "",
+     "tier": "C",
+     "tierNote": "C (needs an employer)",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "name": "Sales",
+   "jobs": [
+    {
+     "title": "Lead researcher",
+     "does": "public companies that match a profile, with public contacts only",
+     "inputs": "public pages",
+     "output": "a sheet",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Outreach drafter",
+     "does": "first-touch emails for a human to send",
+     "inputs": "model",
+     "output": "drafts",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Proposal writer",
+     "does": "a proposal from a brief and our price list",
+     "inputs": "our files",
+     "output": "a PDF",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Deal-desk clerk",
+     "does": "tracks a pipeline in a sheet the owner keeps",
+     "inputs": "uploads",
+     "output": "a weekly summary",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Autodialer / mass mailer",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "name": "Security and audit",
+   "jobs": [
+    {
+     "title": "Site-security scanner",
+     "does": "headers, exposed files, secrets in public repos (our own projects)",
+     "inputs": "our tools, GitHub",
+     "output": "a report",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Contract reader",
+     "does": "explains a Solana program or EVM contract in plain words, lists powers held (`#powers-we-hold`)",
+     "inputs": "chain, verified source",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Key-exposure checker",
+     "does": "the SEALED / EXPOSED check for any address (Bunker seed)",
+     "inputs": "chain",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Phishing-domain watcher",
+     "does": "lookalike domains for our projects",
+     "inputs": "certificate transparency logs",
+     "output": "alerts",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Puzzle cracker",
+     "does": "public key-puzzle search with GPU time (CRACKER)",
+     "inputs": "our GPU",
+     "output": "a daily log",
+     "tier": "B",
+     "tierNote": "B (power cost)",
+     "grade": ""
+    },
+    {
+     "title": "Pen tester of other people's systems",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Journalism and open-source intelligence",
+   "jobs": [
+    {
+     "title": "Event mapper",
+     "does": "a live map of protests, strikes, outages for a country (france-tracker recipe)",
+     "inputs": "GDELT, Bluesky",
+     "output": "a map page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Timeline builder",
+     "does": "a dated timeline of a story with sources (what we did for UHI)",
+     "inputs": "public sources",
+     "output": "a page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Quote verifier",
+     "does": "did the person say it, where, when",
+     "inputs": "primary sources",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Image-origin checker",
+     "does": "reverse search and metadata on a viral image",
+     "inputs": "public tools",
+     "output": "a note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Archive clerk",
+     "does": "saves copies of pages that may vanish",
+     "inputs": "Wayback",
+     "output": "links",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "name": "Sports",
+   "jobs": [
+    {
+     "title": "Fixture and result clerk",
+     "does": "a league's week",
+     "inputs": "public schedules",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Odds reader",
+     "does": "public odds moves on a match, information only",
+     "inputs": "public odds pages",
+     "output": "a note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Stats explainer",
+     "does": "one stat a day, explained",
+     "inputs": "public stats",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Bettor",
+     "does": "D",
+     "inputs": "",
+     "output": "",
+     "tier": "D",
+     "tierNote": "D",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "name": "Travel and hospitality",
+   "jobs": [
+    {
+     "title": "Trip planner",
+     "does": "an itinerary from dates and a budget, with public prices",
+     "inputs": "OpenStreetMap, public fares",
+     "output": "a plan",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Fare watcher",
+     "does": "tracks a route's fares",
+     "inputs": "public fare pages",
+     "output": "alerts",
+     "tier": "C",
+     "tierNote": "C (site terms)",
+     "grade": ""
+    },
+    {
+     "title": "Review summariser",
+     "does": "what reviews agree on for a place",
+     "inputs": "public reviews",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Visa and entry-rules clerk",
+     "does": "official entry rules for a passport, information only",
+     "inputs": "government pages",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "name": "Fashion, culture and entertainment",
+   "jobs": [
+    {
+     "title": "Trend scout",
+     "does": "what's rising in a category from public counts",
+     "inputs": "public feeds",
+     "output": "a weekly note",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Release calendar clerk",
+     "does": "films, albums, games this month",
+     "inputs": "public schedules",
+     "output": "a card",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Lookbook generator",
+     "does": "outfits from a described wardrobe",
+     "inputs": "generation",
+     "output": "images",
+     "tier": "B",
+     "tierNote": "B",
+     "grade": ""
+    },
+    {
+     "title": "Book-club reader",
+     "does": "a chapter summary a day of a public-domain book",
+     "inputs": "Gutenberg",
+     "output": "a page",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "name": "The agency's own staff (robots that run the pad)",
+   "jobs": [
+    {
+     "title": "Payroll robot",
+     "does": "the Friday job: snapshot, shares, routes, stubs, in accrual mode until cleared",
+     "inputs": "ledger",
+     "output": "the stub set",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Handle verifier",
+     "does": "proves X handles for THE CHECK by tweet code (AIRTIME's flow)",
+     "inputs": "X API",
+     "output": "a verified list",
+     "tier": "B",
+     "tierNote": "B (key held)",
+     "grade": ""
+    },
+    {
+     "title": "Night watchman",
+     "does": "checks every robot's heartbeat, wakes or sleeps them by fee balance, writes the morning report",
+     "inputs": "our service",
+     "output": "the report",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Grader",
+     "does": "the second robot that grades outputs where a rule says so",
+     "inputs": "our logs",
+     "output": "grades",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    },
+    {
+     "title": "Hiring clerk",
+     "does": "the launch flow's helper: checks the job is in the catalog, the description carries it, the coin is ours",
+     "inputs": "chain",
+     "output": "a listing",
+     "tier": "A",
+     "tierNote": "A",
+     "grade": ""
+    }
+   ]
+  }
+ ]
+}
